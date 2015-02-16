@@ -22,8 +22,9 @@ hc keybind $Mod-Return spawn xterm -fg white -bg black -vb -bc +si
 hc keybind $Mod-d spawn dmenu_run_hlwm -i
 # Quickly edit files on the fly
 hc keybind $Mod-s spawn xterm -fg white -bg black -vb -bc +si -e "vim +FZF"
-hc keybind $Mod-Shift-e spawn xterm -fg white -bg black -vb -bc +si -fn 10x20 -e "~/.config/herbstluftwm/restore.sh"
-hc keybind $Mod-Shift-b spawn xterm -fg white -bg black -vb -bc +si -fn 10x20 -e "~/.config/herbstluftwm/backup.sh"
+hc keybind $Mod-Shift-e spawn ~/.config/herbstluftwm/restore.sh
+hc keybind $Mod-Shift-b spawn ~/.config/herbstluftwm/backup.sh
+hc keybind $Mod-Shift-f spawn ~/.config/herbstluftwm/delete.sh
 # Disable/Enable the touchpad
 hc keybind $Mod-Shift-i spawn synclient Touchpadoff=0
 hc keybind $Mod-Shift-o spawn synclient Touchpadoff=1
@@ -32,7 +33,7 @@ hc keybind $Mod-Shift-n spawn ~/.config/herbstluftwm/shuffle.sh
 # Reset to the original boot one
 hc keybind $Mod-Shift-m spawn feh --bg-scale ~/.config/herbstluftwm/arch.png
 # Lock screen using slimlock
-hc keybind $Mod-Shift-f spawn slimlock
+hc keybind $Mod-0 spawn slimlock
 # Hide/show the system tray (trayer)
 hc keybind $Mod-Shift-s spawn trayer
 hc keybind $Mod-Shift-d spawn killall trayer
