@@ -19,7 +19,7 @@ hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-c quit
 hc keybind $Mod-Return spawn xterm -fg white -bg black -vb -bc +si
 # Dmenu application launcher
-hc keybind $Mod-d spawn j4-dmenu-desktop --dmenu="dmenu -i" --display-binary --term="xterm -fg white -bg black -vb -bc +si"
+hc keybind $Mod-d spawn dmenu_run_hlwm -i
 # Quickly edit files on the fly
 hc keybind $Mod-s spawn xterm -fg white -bg black -vb -bc +si -e "vim +FZF"
 hc keybind $Mod-Shift-e spawn xterm -fg white -bg black -vb -bc +si -fn 10x20 -e "~/.config/herbstluftwm/restore.sh"
@@ -109,8 +109,6 @@ hc set mouse_recenter_gap 0
 
 # rules
 hc unrule -F
-hc rule title=restore.sh fullscreen=true
-hc rule title=backup.sh fullscreen=true
 hc rule class=Firefox tag=web
 hc rule focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
