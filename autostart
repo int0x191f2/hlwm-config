@@ -8,6 +8,10 @@ hc emit_hook reload
 xsetroot -solid '#5A8E3A'
 # Set default wallpaper to glorious arch.png
 feh --bg-scale ~/.config/herbstluftwm/arch.png
+ 
+if  ! command -v dmenu > /dev/null 2>/dev/null ; then
+    xterm -e "echo 'Warning: dmenu not found in path' && sleep 3"
+fi
 
 hc keyunbind --all
 
@@ -120,9 +124,7 @@ hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 hc unlock
 
 hc set tree_style "X|:#+*-."
-
-/var/scripts/multiMonHerbs.sh
-
+~/.config/herbstluftwm/updatedisplays.sh
 #start the panel
 panel=~/.config/herbstluftwm/panel.sh
 [ -x "$panel" ] || panel=~/.config/herbstluftwm/panel.sh

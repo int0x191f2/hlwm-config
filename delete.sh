@@ -12,4 +12,4 @@ if [ ! -d ~/.config/herbstluftwm/layouts.old ];then
   mkdir ~/.config/herbstluftwm/layouts.old;
 fi
 name=$(ls ~/.config/herbstluftwm/layout -1 | echo $(dmenu -i -l 20 -p Delete))
-rm ~/.config/herbstluftwm/layout/$name
+mv ~/.config/herbstluftwm/layout/$name ~/.config/herbstluftwm/layouts.old/$name
