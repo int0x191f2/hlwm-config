@@ -5,7 +5,6 @@ hc() {
 
 hc emit_hook reload
 
-xsetroot -solid '#5A8E3A'
 # Set default wallpaper to glorious arch.png
 feh --bg-scale ~/.config/herbstluftwm/arch.png
  
