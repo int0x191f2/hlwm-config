@@ -130,3 +130,8 @@ panel=~/.config/herbstluftwm/panel.sh
 for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
     "$panel" $monitor &
 done
+
+# startup applications/settings
+
+synclient Touchpadoff=1
+unclutter -idle 1 -jittler 2 -root &
