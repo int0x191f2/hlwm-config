@@ -161,7 +161,7 @@ hc pad $monitor $panel_height
                     hc pad $monitor 0
                 else
                     visible=true
-                    hc pad $monitor $panel_height
+                    hc pad $monitor $panel_height 0 0 0
                 fi
                 ;;
             reload)
