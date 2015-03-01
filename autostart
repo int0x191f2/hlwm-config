@@ -38,7 +38,7 @@ hc keybind $Mod-Shift-m spawn feh --bg-scale ~/.config/herbstluftwm/arch.png
 # Lock screen using slimlock
 hc keybind $Mod-0 spawn slimlock
 # Hide/show the system tray (trayer)
-hc keybind $Mod-Shift-s spawn trayer
+hc keybind $Mod-Shift-s spawn trayer --edge bottom --align right --widthtype request --heighttype pixel --height 4 --expand true --tint 0x222222 --transparent true
 hc keybind $Mod-Shift-d spawn killall trayer
 
 # basic movement

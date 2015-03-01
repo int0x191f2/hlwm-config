@@ -65,7 +65,7 @@ hc pad $monitor $panel_height
     while true ; do
         # "date" output is checked once a second, but an event is only
         # generated if the output changed compared to the previous run.
-        date +$'date\t^fg(#efefef)%I:%M:%S^fg(#909090)'
+        date +$'date\t^fg(#efefef)%a -> %d.%b.%g -> %I:%M:%S^fg(#909090)'
         sleep 1 || break
     done > >(uniq_linebuffered) &
     childpid=$!
@@ -117,7 +117,7 @@ hc pad $monitor $panel_height
         echo -n "$separator"
         echo -n "^bg()^fg() ${windowtitle//^/^^}"
         # small adjustments
-        right="$separator^bg() $date $separator"
+        right="^bg() $date $separator $(acpi | awk '{print $4}' | sed -e "s/,//g") $separator $(cat /proc/loadavg | awk '{print $2}') $separator $(ip addr | ag "inet " | tr "/" " " | awk '{if (NR!=1) {print $9,$2}}' | tr "\n" " ")"
         right_text_only=$(echo -n "$right" | sed 's.\^[^(]*([^)]*)..g')
         # get width of right aligned text.. and add some space..
         width=$($textwidth "$font" "$right_text_only    ")
@@ -161,7 +161,7 @@ hc pad $monitor $panel_height
                     hc pad $monitor 0
                 else
                     visible=true
-                    hc pad $monitor $panel_height
+                    hc pad $monitor $panel_height 0 0 0
                 fi
                 ;;
             reload)
