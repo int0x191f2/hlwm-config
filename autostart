@@ -29,6 +29,7 @@ hc keybind $Mod-s spawn xterm -fg white -bg black -vb -bc +si -e "vim +FZF"
 hc keybind $Mod-Shift-e spawn ~/.config/herbstluftwm/restore.sh
 hc keybind $Mod-Shift-b spawn ~/.config/herbstluftwm/backup.sh
 hc keybind $Mod-Shift-f spawn ~/.config/herbstluftwm/delete.sh
+hc keybind $Mod-Shift-period spawn ~/.config/herbstluftwm/scripts/tags/new.sh
 # Disable/Enable the touchpad
 hc keybind $Mod-Shift-i spawn synclient Touchpadoff=0
 hc keybind $Mod-Shift-o spawn synclient Touchpadoff=1
