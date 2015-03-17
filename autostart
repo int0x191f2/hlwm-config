@@ -21,6 +21,7 @@ hc keybind $Mod-Shift-q close
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-c quit
 hc keybind $Mod-Return spawn xterm -fg white -bg black -vb -bc +si
+#hc keybind $Mod-Return spawn st
 # Dmenu application launcher
 hc keybind $Mod-d spawn dmenu_run -i -l 20 -p Launcher -nf red -sb red
 # Quickly edit files on the fly
@@ -69,6 +70,8 @@ hc add media
 hc add 1
 hc add 2
 hc add 3
+hc add 4
+hc add 5
 
 hc keybind $Mod-1 use term
 hc keybind $Mod-2 use web
@@ -76,6 +79,8 @@ hc keybind $Mod-3 use media
 hc keybind $Mod-4 use 1
 hc keybind $Mod-5 use 2
 hc keybind $Mod-6 use 3
+hc keybind $Mod-7 use 4
+hc keybind $Mod-8 use 5
 
 hc keybind $Mod-Shift-1 move term
 hc keybind $Mod-Shift-2 move web
@@ -83,6 +88,8 @@ hc keybind $Mod-Shift-3 move media
 hc keybind $Mod-Shift-4 move 1
 hc keybind $Mod-Shift-5 move 2
 hc keybind $Mod-Shift-6 move 3
+hc keybind $Mod-Shift-7 move 4
+hc keybind $Mod-Shift-8 move 5
 
 # layouting
 hc keybind $Mod-x remove
@@ -134,4 +141,4 @@ done
 # startup applications/settings
 
 synclient Touchpadoff=1
-unclutter -idle 1 -jittler 2 -root &
+#unclutter -idle 1 -jittler 2 -root &
