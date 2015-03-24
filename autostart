@@ -92,6 +92,8 @@ hc keybind $Mod-Shift-6 move 3
 hc keybind $Mod-Shift-7 move 4
 hc keybind $Mod-Shift-8 move 5
 
+hc keybind $Mod-period use_index +1 --skip-visible
+hc keybind $Mod-comma use_index -1 --skip-visible 
 # layouting
 hc keybind $Mod-x remove
 hc keybind $Mod-f fullscreen toggle
@@ -122,8 +124,9 @@ hc set mouse_recenter_gap 0
 # rules
 hc unrule -F
 hc rule class=Firefox tag=web
+hc rule class=Nm-connection-editor fullscreen=on
 hc rule focus=on
-hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
+hc rule windowtype='_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 
