@@ -129,6 +129,8 @@ hc rule focus=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
+hc load term '(split horizontal:0.500000:0 (split vertical:0.500000:1 (clients vertical:0) (clients grid:0)) (split vertical:0.500000:0 (clients grid:0) (clients grid:0)))'
+hc load media '(split horizontal:0.700000:1 (clients vertical:0) (clients vertical:0))'
 
 # unlock, just to be sure
 hc unlock
