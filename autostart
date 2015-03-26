@@ -11,9 +11,6 @@ hc emit_hook reload
 # Set default wallpaper to glorious arch.png
 feh --bg-scale ~/.config/herbstluftwm/arch.png
  
-if  command -v dmenu > /dev/null 2>/dev/null ; then
-    $TERM -e "echo 'Warning: dmenu not found in path' && sleep 3"
-fi
 hc keyunbind --all
 Mod=Mod1
 Super=Mod4
