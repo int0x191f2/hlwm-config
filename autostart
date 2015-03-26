@@ -26,15 +26,15 @@ hc keybind $Mod-Return spawn xterm -fg white -bg black -vb -bc +si
 hc keybind $Mod-d spawn dmenu_run -i -l 20 -p Launcher -nf red -sb red
 # Quickly edit files on the fly
 hc keybind $Mod-s spawn xterm -fg white -bg black -vb -bc +si -e "vim +FZF"
-hc keybind $Mod-Shift-e spawn ~/.config/herbstluftwm/restore.sh
-hc keybind $Mod-Shift-b spawn ~/.config/herbstluftwm/backup.sh
-hc keybind $Mod-Shift-f spawn ~/.config/herbstluftwm/delete.sh
+hc keybind $Mod-Shift-e spawn ~/.config/herbstluftwm/scripts/layout/restore.sh
+hc keybind $Mod-Shift-b spawn ~/.config/herbstluftwm/scripts/layout/backup.sh
+hc keybind $Mod-Shift-f spawn ~/.config/herbstluftwm/scripts/layout/delete.sh
 hc keybind $Mod-Shift-period spawn ~/.config/herbstluftwm/scripts/tags/new.sh
 # Disable/Enable the touchpad
 hc keybind $Mod-Shift-i spawn synclient Touchpadoff=0
 hc keybind $Mod-Shift-o spawn synclient Touchpadoff=1
 # Cycle wallpapers (thanks austen)
-hc keybind $Mod-Shift-n spawn ~/.config/herbstluftwm/shuffle.sh
+hc keybind $Mod-Shift-n spawn ~/.config/herbstluftwm/scripts/misc/shuffle.sh
 # Reset to the original boot one
 hc keybind $Mod-Shift-m spawn feh --bg-scale ~/.config/herbstluftwm/arch.png
 # Lock screen using slimlock
@@ -54,8 +54,8 @@ hc keybind $Mod-Shift-k     shift up
 hc keybind $Mod-Shift-l     shift right
 
 # create an empty frame at the specified direction via the split script
-hc keybind $Mod-u spawn ~/.config/herbstluftwm/split bottom .5
-hc keybind $Mod-o spawn ~/.config/herbstluftwm/split right .5
+hc keybind $Mod-u spawn ~/.config/herbstluftwm/scripts/layout/split bottom .5
+hc keybind $Mod-o spawn ~/.config/herbstluftwm/scripts/layout/split right .5
 
 # resizing frames
 resizestep=0.05
@@ -138,7 +138,7 @@ hc unlock
 hc set tree_style "X|:#+*-."
 ~/.config/herbstluftwm/updatedisplays.sh
 #start the panel
-panel=~/.config/herbstluftwm/panel.sh
+panel=~/.config/herbstluftwm/scripts/panel/panel.sh
 [ -x "$panel" ] || panel=~/.config/herbstluftwm/panel.sh
 for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
     "$panel" $monitor &
