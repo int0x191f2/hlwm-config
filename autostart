@@ -1,4 +1,7 @@
 #!/bin/bash
+
+#Terminal emulator to use
+TERM=xterm
 hc() {
     herbstclient "$@"
 }
@@ -8,24 +11,19 @@ hc emit_hook reload
 # Set default wallpaper to glorious arch.png
 feh --bg-scale ~/.config/herbstluftwm/arch.png
  
-if  ! command -v dmenu > /dev/null 2>/dev/null ; then
-    xterm -e "echo 'Warning: dmenu not found in path' && sleep 3"
+if  command -v dmenu > /dev/null 2>/dev/null ; then
+    $TERM -e "echo 'Warning: dmenu not found in path' && sleep 3"
 fi
-
 hc keyunbind --all
-
 Mod=Mod1
 Super=Mod4
-
 hc keybind $Mod-Shift-q close
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-c quit
-hc keybind $Mod-Return spawn xterm -fg white -bg black -vb -bc +si
+hc keybind $Mod-Return spawn $TERM -fg white -bg black -vb -bc +si
 #hc keybind $Mod-Return spawn st
 # Dmenu application launcher
 hc keybind $Mod-d spawn dmenu_run -i -l 20 -p Launcher -nf red -sb red
-# Quickly edit files on the fly
-hc keybind $Mod-s spawn xterm -fg white -bg black -vb -bc +si -e "vim +FZF"
 hc keybind $Mod-Shift-e spawn ~/.config/herbstluftwm/scripts/layout/restore.sh
 hc keybind $Mod-Shift-b spawn ~/.config/herbstluftwm/scripts/layout/backup.sh
 hc keybind $Mod-Shift-f spawn ~/.config/herbstluftwm/scripts/layout/delete.sh
@@ -148,3 +146,4 @@ done
 
 synclient Touchpadoff=1
 #unclutter -idle 1 -jittler 2 -root &
+xbindkeys
