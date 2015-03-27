@@ -2,15 +2,16 @@
 
 #Terminal emulator to use
 TERM=xterm
+#Panel script location
+PANEL=~/.config/herbstluftwm/scripts/panel/panel.sh
+#Startup script
+STARTUP=~/.config/herbstluftwm/scripts/misc/startup.sh
 hc() {
     herbstclient "$@"
 }
-
 hc emit_hook reload
-
 # Set default wallpaper to glorious arch.png
 feh --bg-scale ~/.config/herbstluftwm/arch.png
- 
 hc keyunbind --all
 Mod=Mod1
 Super=Mod4
@@ -131,16 +132,11 @@ hc load media '(split horizontal:0.700000:1 (clients vertical:0) (clients vertic
 hc unlock
 
 hc set tree_style "X|:#+*-."
-~/.config/herbstluftwm/updatedisplays.sh
+~/.config/herbstluftwm/scripts/misc/updatedisplays.sh
 #start the panel
-panel=~/.config/herbstluftwm/scripts/panel/panel.sh
-[ -x "$panel" ] || panel=~/.config/herbstluftwm/panel.sh
 for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
-    "$panel" $monitor &
+    "$PANEL" $monitor &
 done
 
-# startup applications/settings
-
-synclient Touchpadoff=1
-#unclutter -idle 1 -jittler 2 -root &
-xbindkeys
+#Run startup script
+bash $STARTUP &

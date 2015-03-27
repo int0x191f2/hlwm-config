@@ -33,3 +33,7 @@ Optional:
 - synaptics/synclient/syndaemon
 
     Disables trackpad on laptops
+
+- xbacklight
+
+    Used to set display brightness on laptops
