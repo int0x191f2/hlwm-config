@@ -1,5 +1,6 @@
 #!/bin/bash
 if [ ! -h /sys/class/power_supply/BAT0 ];then
+  echo "No Battery"
   exit
 fi
 if [ "$(acpi -a | awk '{print $3}')" != 'on-line' ]
