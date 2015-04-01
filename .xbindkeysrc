@@ -6,6 +6,12 @@
    XF86AudioRaiseVolume
 "amixer set Master toggle"
    XF86AudioMute
+"mpc toggle"
+   XF86AudioPlay
+"mpc next"
+   XF86AudioNext
+"mpc prev"
+   XF86AudioPrev
 "xbacklight -inc 20"
    XF86MonBrightnessUp
 "xbacklight -dec 20"
