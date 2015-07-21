@@ -98,7 +98,7 @@ hc set frame_bg_active_color '#666666'
 hc set frame_border_width 1
 hc set window_border_width 1
 hc set window_border_normal_color '#000000'
-hc set window_border_active_color '#FFFFFF'
+hc set window_border_active_color '#cc0000'
 hc set window_gap 0
 hc set frame_padding 0
 hc set smart_window_surroundings 0
