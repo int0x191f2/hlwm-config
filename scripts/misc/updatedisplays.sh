@@ -1,3 +1,3 @@
 #!/bin/bash
-xrandr --output LVDS1 --auto --output VGA1 --auto --right-of LVDS1
+xrandr --output LVDS1 --auto --output VGA1 --auto --left-of LVDS1
 herbstclient detect_monitors

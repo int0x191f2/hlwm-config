@@ -18,8 +18,8 @@ hc keybind $Mod-Shift-q close
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-c quit
 hc keybind $Mod-Return spawn $TERM -fg white -bg black -vb -bc +si
-# Dmenu application launcher
-hc keybind $Mod-d spawn dmenu_run -i -l 20 -p Launcher -nf red -sb red
+# rofi application launcher
+hc keybind $Mod-d spawn rofi -show run -fg "#ff0000" -bg "#000000"
 hc keybind $Mod-Shift-e spawn ~/.config/herbstluftwm/scripts/layout/restore.sh
 hc keybind $Mod-Shift-b spawn ~/.config/herbstluftwm/scripts/layout/backup.sh
 hc keybind $Mod-Shift-f spawn ~/.config/herbstluftwm/scripts/layout/delete.sh
@@ -58,27 +58,27 @@ hc keybind $Mod-$Super-l       resize right +$resizestep
 hc rename default term
 hc add web
 hc add media
-hc add 1
-hc add 2
-hc add 3
-hc add 4
+hc add dev
 hc add 5
+hc add 6
+hc add 7
+hc add 8
 hc keybind $Mod-1 use term
 hc keybind $Mod-2 use web
 hc keybind $Mod-3 use media
-hc keybind $Mod-4 use 1
-hc keybind $Mod-5 use 2
-hc keybind $Mod-6 use 3
-hc keybind $Mod-7 use 4
-hc keybind $Mod-8 use 5
+hc keybind $Mod-4 use dev
+hc keybind $Mod-5 use 5
+hc keybind $Mod-6 use 6
+hc keybind $Mod-7 use 7
+hc keybind $Mod-8 use 8
 hc keybind $Mod-Shift-1 move term
 hc keybind $Mod-Shift-2 move web
 hc keybind $Mod-Shift-3 move media
-hc keybind $Mod-Shift-4 move 1
-hc keybind $Mod-Shift-5 move 2
-hc keybind $Mod-Shift-6 move 3
-hc keybind $Mod-Shift-7 move 4
-hc keybind $Mod-Shift-8 move 5
+hc keybind $Mod-Shift-4 move dev
+hc keybind $Mod-Shift-5 move 5
+hc keybind $Mod-Shift-6 move 6
+hc keybind $Mod-Shift-7 move 7
+hc keybind $Mod-Shift-8 move 8
 hc keybind $Mod-period use_index +1 --skip-visible
 hc keybind $Mod-comma use_index -1 --skip-visible 
 # layouting
@@ -108,6 +108,7 @@ hc set mouse_recenter_gap 0
 hc unrule -F
 hc rule class=Firefox tag=web
 hc rule class=Nm-connection-editor fullscreen=on
+hc rule class=jetbrains-studio tag=dev
 hc rule focus=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
