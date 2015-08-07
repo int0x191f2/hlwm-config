@@ -1,10 +1,16 @@
 #!/bin/bash
+# Variables for hlwm
 #Terminal emulator to use
 TERM=xterm
 #Panel script location
 PANEL=~/.config/herbstluftwm/scripts/panel/panel.sh
 #Startup script
 STARTUP=~/.config/herbstluftwm/scripts/misc/startup.sh
+
+#Mod/Super keys
+Mod=Mod1
+Super=Mod4
+echo $TERM
 hc() {
     herbstclient "$@"
 }
@@ -12,8 +18,6 @@ hc emit_hook reload
 # Set default wallpaper to glorious arch.png
 feh --bg-scale ~/.config/herbstluftwm/arch.png
 hc keyunbind --all
-Mod=Mod1
-Super=Mod4
 hc keybind $Mod-Shift-q close
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-c quit

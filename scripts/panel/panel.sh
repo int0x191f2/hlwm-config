@@ -117,7 +117,7 @@ hc pad $monitor $panel_height
         echo -n "$separator"
         echo -n "^bg()^fg() ${windowtitle//^/^^}"
         # small adjustments
-        right="$date $separator $(~/.config/herbstluftwm/scripts/panel/sound.sh) $separator $(~/.config/herbstluftwm/scripts/panel/battery.sh) $separator $(cat /proc/loadavg | awk '{print $2}') $separator $(ip addr | ag "inet " | tr "/" " " | awk '{if (NR!=1) {print $9,$2}}' | tr "\n" " ")"
+        right="$date $separator $(~/.config/herbstluftwm/scripts/panel/battery.sh) | $(~/.config/herbstluftwm/scripts/panel/mpd.sh) $separator $(cat /proc/loadavg | awk '{print $2}') $separator $(ip addr | ag "inet " | tr "/" " " | awk '{if (NR!=1) {print $9,$2}}' | tr "\n" " ")"
         right_text_only=$(echo -n "$right" | sed 's.\^[^(]*([^)]*)..g')
         # get width of right aligned text.. and add some space..
         width=$($textwidth "$font" "$right_text_only    ")
