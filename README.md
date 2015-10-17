@@ -19,9 +19,9 @@ Requirements:
 - dzen2/conky
 
     Used to display the panel
-- dmenu
+- rofi
 
-    Used as an application launcher and for layouts
+    Used as an application launcher
 
 Optional:
 - slimlock
