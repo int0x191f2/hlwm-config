@@ -23,7 +23,7 @@ hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-c quit
 hc keybind $Mod-Return spawn $TERM -fg white -bg black -vb -bc +si
 # rofi application launcher
-hc keybind $Mod-d spawn rofi -show run -fg "#ff0000" -bg "#000000"
+hc keybind $Mod-d spawn rofi -show combi -combi-modi "window,run,ssh" -fg "#ff0000" -bg "#000000"
 hc keybind $Mod-Shift-e spawn ~/.config/herbstluftwm/scripts/layout/restore.sh
 hc keybind $Mod-Shift-b spawn ~/.config/herbstluftwm/scripts/layout/backup.sh
 hc keybind $Mod-Shift-f spawn ~/.config/herbstluftwm/scripts/layout/delete.sh
@@ -113,12 +113,12 @@ hc unrule -F
 hc rule class=Firefox tag=web
 hc rule class=Nm-connection-editor fullscreen=on
 hc rule class=jetbrains-studio tag=dev
+hc rule class=VirtualBox fullscreen=on
 hc rule focus=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 hc load term '(split horizontal:0.500000:0 (split vertical:0.500000:1 (clients vertical:0) (clients grid:0)) (split vertical:0.500000:0 (clients grid:0) (clients grid:0)))'
-hc load media '(split horizontal:0.700000:1 (clients vertical:0) (clients vertical:0))'
 # unlock, just to be sure
 hc unlock
 hc set tree_style "X|:#+*-."
