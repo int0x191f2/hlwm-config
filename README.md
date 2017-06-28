@@ -3,6 +3,9 @@ hlwm-config
 
 Personal configuration files for herbstluftwm
 
+
+git clone https://github.com/int0x191f2/hlwm-config ~/.config/herbstluftwm
+
 Requirements: 
 - ALSA
 
