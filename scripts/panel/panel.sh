@@ -11,8 +11,8 @@ fi
 x=${geometry[0]}
 y=${geometry[1]}
 panel_width=${geometry[2]}
-panel_height=8
-font="-*-fixed-medium-*-*-*-7-*-*-*-*-*-*-*"
+panel_height=14
+font="-*-fixed-medium-*-*-*-14-*-*-*-*-*-*-*"
 bgcolor=$(hc get frame_border_normal_color)
 selbg='#ffffff'
 selfg='#101010'
@@ -117,7 +117,7 @@ hc pad $monitor $panel_height
         echo -n "$separator"
         echo -n "^bg()^fg() ${windowtitle//^/^^}"
         # small adjustments
-        right="$date $separator $(~/.config/herbstluftwm/scripts/panel/battery.sh) | $(~/.config/herbstluftwm/scripts/panel/sound.sh) $separator $(cat /proc/loadavg | awk '{print $2}') $separator $(ip addr | ag "inet " | tr "/" " " | awk '{if (NR!=1) {print $9,$2}}' | tr "\n" " ")"
+        right="$date $separator $(~/.config/herbstluftwm/scripts/panel/battery.sh) | $(~/.config/herbstluftwm/scripts/panel/sound.sh) $separator $(cat /proc/loadavg | awk '{print $2}') $separator $(~/.config/herbstluftwm/scripts/panel/networking.sh)"
         right_text_only=$(echo -n "$right" | sed 's.\^[^(]*([^)]*)..g')
         # get width of right aligned text.. and add some space..
         width=$($textwidth "$font" "$right_text_only    ")
