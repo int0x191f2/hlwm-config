@@ -23,7 +23,7 @@ hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-c quit
 hc keybind $Mod-Return spawn $TERM -fg white -bg black -vb -bc +si
 # rofi application launcher
-hc keybind $Mod-d spawn rofi -show combi -combi-modi "window,run,ssh" -fg "#ff0000" -bg "#000000"
+hc keybind $Mod-d spawn rofi -show run -fg "#ff0000" -bg "#000000"
 hc keybind $Mod-Shift-e spawn ~/.config/herbstluftwm/scripts/layout/restore.sh
 hc keybind $Mod-Shift-b spawn ~/.config/herbstluftwm/scripts/layout/backup.sh
 hc keybind $Mod-Shift-f spawn ~/.config/herbstluftwm/scripts/layout/delete.sh
