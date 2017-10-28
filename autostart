@@ -124,8 +124,9 @@ hc unlock
 hc set tree_style "X|:#+*-."
 ~/.config/herbstluftwm/scripts/misc/updatedisplays.sh
 #start the panel
-for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
-    "$PANEL" $monitor &
-done
+#for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
+#    "$PANEL" $monitor &
+#done
 #Run startup script
+polybar example
 bash $STARTUP &
