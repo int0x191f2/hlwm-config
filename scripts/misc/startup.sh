@@ -5,7 +5,6 @@ if [ $(md5sum ~/.config/herbstluftwm/.xbindkeysrc|awk '{print $1}') != $(md5sum 
   cp ~/.config/herbstluftwm/.xbindkeysrc ~/.xbindkeysrc
 fi
 # backup polybar config
-cp ~/.config/polybar/config ~/.config/polybar/config.backup
 cp ~/.config/herbstluftwm/scripts/panel/polybar/config ~/.config/polybar/config
 # synclient Touchpadoff=1
 xbindkeys

@@ -128,5 +128,8 @@ hc set tree_style "X|:#+*-."
 #    "$PANEL" $monitor &
 #done
 #Run startup script
-polybar example
+#start polybar
+polybar -c ~/.config/herbstluftwm/scripts/panel/polybar/config example & 
+#pad the montiror
+hc pad 0 16 
 bash $STARTUP &
