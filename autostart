@@ -16,7 +16,7 @@ hc() {
 }
 hc emit_hook reload
 # Set default wallpaper to glorious arch.png
-feh --bg-scale ~/.config/herbstluftwm/arch.png
+feh --bg-scale ~/.config/herbstluftwm/black.jpg
 hc keyunbind --all
 hc keybind $Mod-Shift-q close
 hc keybind $Mod-Shift-r reload

@@ -16,3 +16,5 @@
    XF86MonBrightnessUp
 "xbacklight -dec 20"
    XF86MonBrightnessDown
+"xbacklight -set 0"
+  F7

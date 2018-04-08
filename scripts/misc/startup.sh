@@ -8,4 +8,6 @@ fi
 cp ~/.config/herbstluftwm/scripts/panel/polybar/config ~/.config/polybar/config
 # synclient Touchpadoff=1
 xbindkeys
+nextcloud &
+syndaemon -i .5 -K -R &
 nm-applet
