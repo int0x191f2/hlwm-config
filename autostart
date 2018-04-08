@@ -27,12 +27,13 @@ hc keybind $Mod-d spawn rofi -show run -fg "#ff0000" -bg "#000000"
 hc keybind $Mod-Shift-e spawn ~/.config/herbstluftwm/scripts/layout/restore.sh
 hc keybind $Mod-Shift-b spawn ~/.config/herbstluftwm/scripts/layout/backup.sh
 hc keybind $Mod-Shift-f spawn ~/.config/herbstluftwm/scripts/layout/delete.sh
+hc keybind $Mod-Shift-n spawn ~/.config/herbstluftwm/scripts/misc/vpn.sh
 hc keybind $Mod-Shift-period spawn ~/.config/herbstluftwm/scripts/tags/new.sh
 # Disable/Enable the touchpad
 hc keybind $Mod-Shift-i spawn synclient Touchpadoff=0
 hc keybind $Mod-Shift-o spawn synclient Touchpadoff=1
 # Cycle wallpapers (thanks austen)
-hc keybind $Mod-Shift-n spawn ~/.config/herbstluftwm/scripts/misc/shuffle.sh
+# hc keybind $Mod-Shift-n spawn ~/.config/herbstluftwm/scripts/misc/shuffle.sh
 # Reset to the original boot one
 hc keybind $Mod-Shift-m spawn feh --bg-scale ~/.config/herbstluftwm/arch.png
 # Lock screen using slimlock
